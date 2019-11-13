@@ -1,0 +1,315 @@
+/* Global */
+html {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Index-Header */
+.container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 9px;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding-top: 5px;
+  width: 100%;
+  min-height: 30px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 2px solid #fff;
+  box-shadow: 5px 0 20px black;
+  font-family: sans-serif;
+}
+header #branding {
+  float: left;
+  margin: 0;
+}
+header h1 {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+header ul {
+  padding: 0;
+  margin: 0;
+}
+header nav {
+  float: right;
+  margin-top: 20px;
+}
+header li {
+  display: inline;
+  padding: 19px 10px 0 10px;
+  font-weight: 900;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+header a:hover {
+  opacity: 0.9;
+}
+
+/* Signup Container */
+.signup-container {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+.f-form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 16px;
+}
+.f-form h3 {
+  font-weight: 700;
+  font-size: 30px;
+}
+.f-form label {
+  font-size: 18px;
+  font-weight: 200px;
+}
+.f-form input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.f-form p {
+  text-align: center;
+}
+.f-form p a {
+  text-decoration: none;
+  color: #333;
+  opacity: 0.9;
+}
+
+/* Login container */
+.login-container {
+  width: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  height: calc(100vh - 250px);
+}
+
+/* New record */
+.recordSelect {
+  width: 100%;
+  border-radius: 4px;
+  border: 0.5px solid #ccc;
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+/* User Delete and Edit the Record */
+.wrapper {
+  min-height: calc(100vh - 100px) !important;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapperSection {
+  height: 100%;
+  width: 0 auto;
+  margin: 0 auto;
+}
+.recordView {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2em;
+  background-color: #efefef;
+  border-radius: 2em;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 1rem;
+}
+.recordImage {
+  height: 35rem;
+}
+.recordImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+}
+.recordImage img:hover {
+  opacity: 0.9;
+}
+.details {
+  border-radius: 2%;
+  border: 0.5px solid #ccc;
+  display: grid;
+  overflow: hidden;
+}
+.recordDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.recordDescription,
+.userActions {
+  padding: 4%;
+  line-height: 3em;
+  clear: both;
+  overflow: hidden;
+}
+.recordDescription p,
+.userActions p,
+.recordDescription h2,
+.userActions h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+.recordComment {
+  padding: 2%;
+  font-size: 15px;
+  clear: both;
+}
+.userActions button {
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 15px;
+  padding: 2%;
+  border-radius: 5px;
+}
+.editButton {
+  background-color: dodgerblue;
+}
+.editButton:hover {
+  background-color: darkblue;
+}
+.deleteButton {
+  background-color: #222222;
+}
+.deleteButton:hover {
+  background-color: darkred;
+}
+/* User View All Records */
+.filter {
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+}
+.filter-records {
+  display: block;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 18%;
+  border-radius: 0.4em;
+  background-color: #fff;
+}
+.recordGrid {
+  width: 90%;
+  height: 100%;
+  padding: 1%;
+  margin: auto;
+  background-color: #efefef;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1em;
+  align-items: stretch;
+  justify-items: stretch;
+}
+.inside {
+  height: 100%;
+  border: 0.5px solid #ccc;
+  border-radius: 0 0 2% 2%;
+  padding: 1%;
+}
+.recordPhoto {
+  height: 80%;
+}
+.recordPhoto img {
+  height: 100%;
+  width: 100%;
+}
+
+.recordPhoto p {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 5%;
+}
+/* Admin can view all Created Records */
+.admin {
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+/* Admin can change the Record Status */
+.investigateButton {
+  background-color: cornflowerblue;
+}
+.investigateButton:hover {
+  background-color: cadetblue;
+}
+.resolvedButton {
+  background-color: #00c2ff;
+}
+.resolvedButton:hover {
+  background-color: darkblue;
+}
+.rejectButton {
+  background-color: #222222;
+}
+.rejectButton:hover {
+  background-color: firebrick;
+}
+
+.button_1 {
+  background-color: #333;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 200px;
+  border: none;
+}
+.button_1:hover {
+  opacity: 0.8;
+}
+/* Footer */
+footer {
+  background-color: #333;
+  margin-top: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+}

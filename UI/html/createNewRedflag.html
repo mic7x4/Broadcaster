@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="page for creating A redflag Record" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Broadcaster | Create Record</title>
+  </head>
+  <body>
+    <header class="container">
+      <div id="branding">
+        <h1>Broadcaster</h1>
+      </div>
+      <nav>
+        <ul>
+          <!-- <li><a href="signup.html">Sign Up</a></li> -->
+          <li><a href="login.html">All Record</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="signup-container">
+        <form action="" class="f-form">
+          <h3>Create a record</h3>
+          <label for="title">Title</label>
+          <input type="text" name="title" required />
+          <label for="type">Type</label>
+          <select name="recordType" class="recordSelect">
+            <option value="select record type" selected disabled>
+              Record type
+            </option>
+            <option value="red-flag">Red Flag</option>
+            <option value="intervention">Intervention</option>
+          </select>
+          <label for="location">Location</label>
+          <input type="text" name="location" required />
+          <label for="status">Status</label>
+          <select name="recordType" class="recordSelect">
+            <option value="select record type" selected disabled>
+              under investigation
+            </option>
+            <option value="select record type" selected disabled>
+              resolved
+            </option>
+            <option value="select record type" selected disabled>
+              rejected
+            </option>
+            <option value="red-flag">Draft</option>
+          </select>
+          <label for="pictures">Add pictures</label>
+          <input type="file" name="recordImage" id="" multiple="multiple" required>
+          <label for="videos">Add Videos</label>
+          <input type="file" name="recordVideos" id="" multiple="multiple" required>
+          <label for="comment">Comment</label>
+          <textarea name="recordComment" id="recordComment" cols="30" rows="10" placeholder="Add comment to your record...."></textarea>
+          <div>
+            <button class="button_1">Post a record</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="broadcaster-footer">
+      <p>Broadcaster Copyright &copy; 2019</p>
+    </footer>
+  </body>
+</html>

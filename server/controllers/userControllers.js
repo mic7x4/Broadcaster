@@ -1,11 +1,11 @@
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import Users from "../model/Users";
+import dotenv from 'dotenv';
+import helper from '../helpers/helpers';
+import Users from '../model/Users';
 
-require("dotenv").config();
-const { JWT_SECRET } = process.env;
+dotenv.config();
+const { signJwt, hashPassword } = helper;
 class userControllers {
-  // user can sign up controller
+  // User signup Controlller
   static userSignup(req, res) {
     const {
       firstname,
@@ -13,42 +13,41 @@ class userControllers {
       email,
       password,
       phoneNumber,
-      username
+      username,
     } = req.body;
-
-    bcrypt.hash(password, 10, (err, hash) => {
-      if (err) return res.status(500).json({ error: err });
-      const newUser = [
-        {
-          id: Users.length + 1,
-          firstname,
-          lastname,
-          email,
-          password,
-          phoneNumber,
-          username,
-          isAdmin: false
-        }
-      ];
-      const findEmail = Users.find(user => user.email === email);
-      const findUsername = Users.find(user => user.username === username);
-      if (findEmail) return res.status(400).send("user with that email exists");
-      if (findUsername) return res.status(400).send("username already exists");
-      const userToken = jwt.sign({ newUser }, JWT_SECRET);
-      newUser.password = hash;
+    const newUser = [
+      {
+        id: Users.length + 1,
+        firstname,
+        lastname,
+        email,
+        password,
+        phoneNumber,
+        username,
+        isAdmin: false,
+      },
+    ];
+    const hashedPassword = hashPassword(password);
+    const userToken = signJwt(newUser);
+    newUser.password = hashedPassword;
+    if (email === newUser.email) {
       Users.push(newUser);
       return res.status(201).json({
         status: res.statusCode,
-        message: "user Created successfull",
+        message: 'user Created successfull',
         data: {
           userToken,
           firstname,
           lastname,
           email,
           phoneNumber,
-          username
-        }
+          username,
+        },
       });
+    }
+    return res.status(400).json({
+      status: res.statusCode,
+      message: 'email doesn\'t match',
     });
   }
 }

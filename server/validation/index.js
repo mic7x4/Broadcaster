@@ -11,6 +11,7 @@ const generalValidator = (data, schema, res, next) => {
     return res.status(400).json({ status: res.statusCode, error: errors });
   }
   return next();
+  
 };
 
 export default generalValidator;

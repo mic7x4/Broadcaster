@@ -20,6 +20,10 @@ class helper {
   static hashPassword(password) {
     return bcrypt.hashSync(password, saltRound);
   }
+
+  static compareHash(password, hash) {
+    return bcrypt.compareSync(password, hash);
+  }
 }
 
 export default helper;

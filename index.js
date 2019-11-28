@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 // Users routes
 app.use('/api/v1', UserRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is Runninfg on port ${PORT}`));
 
 export default app;

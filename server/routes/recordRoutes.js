@@ -7,5 +7,7 @@ const recordRoute = express.Router();
 recordRoute.post('/redflags', validation.createRecord, recordController.createRecord);
 // Getting all records
 recordRoute.get('/redflags', recordController.getAllRecord);
+// Get a single Record by id
+recordRoute.get('/redflags/:id', validation.recordId, recordController.getSingleRecord);
 
 export default recordRoute;

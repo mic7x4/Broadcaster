@@ -30,6 +30,21 @@ class RecordControllers {
       data: Records,
     });
   }
+
+  //   Get single Redflag by id
+  static getSingleRecord(req, res) {
+    const findRecord = Records.find(
+      // eslint-disable-next-line radix
+      (record) => record.id === parseInt(req.params.id),
+    );
+    if (!findRecord) {
+      return res
+        .status(404)
+        .json({ message: 'Record with that ID is not found' });
+    }
+
+    return res.status(200).json({ status: res.statusCode, findRecord });
+  }
 }
 
 export default RecordControllers;

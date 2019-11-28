@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
 
-dotenv.config();
+require('dotenv').config();
 
 const { JWT_SECRET } = process.env;
 
@@ -17,11 +16,11 @@ const tokenValidator = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded;
-    next();
   } catch (ex) {
     return res
       .status(400)
       .json({ status: res.statusCode, message: 'Invalid token' });
   }
+  return next();
 };
 export default tokenValidator;

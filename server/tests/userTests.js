@@ -21,7 +21,14 @@ const badUser = {
   password: '123',
   phoneNumber: '08',
 };
-
+const correctLoginUser = {
+  email: 'test@gmail.com',
+  password: '1234567890',
+};
+const incorrectLoginUser = {
+  email: '123.com',
+  password: '123',
+};
 
 describe('Test All user Endpoints', () => {
   describe('Test POST /auth', () => {
@@ -43,6 +50,29 @@ describe('Test All user Endpoints', () => {
         .send(badUser)
         .end((err, res) => {
           res.should.have.status(400);
+          done();
+        });
+    });
+    it('It should Sign the user in ', (done) => {
+      chai
+        .request(app)
+        .post('/api/v1/auth/signin')
+        .send(correctLoginUser)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.have.property('status');
+          done();
+        });
+    });
+    it('It should fail to  Sign the user in ', (done) => {
+      chai
+        .request(app)
+        .post('/api/v1/auth/signin')
+        .send(incorrectLoginUser)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.should.have.property('status');
+          res.body.should.have.property('error');
           done();
         });
     });

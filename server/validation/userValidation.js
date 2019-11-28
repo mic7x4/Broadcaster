@@ -33,6 +33,16 @@ const userValidation = {
     });
     generalValidation(req.body, schema, res, next);
   },
+  signin: (req, res, next) => {
+    const schema = Joi.object().keys({
+      email: Joi.string()
+        .email()
+        .lowercase()
+        .required(),
+      password: Joi.string().required(),
+    });
+    generalValidation(req.body, schema, res, next);
+  },
 };
 
 export default userValidation;

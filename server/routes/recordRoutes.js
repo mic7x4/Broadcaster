@@ -14,5 +14,6 @@ recordRoute.get('/redflags/:id', validation.recordId, recordController.getSingle
 recordRoute.patch('/redflags/:id/location', tokenValidator, validation.recordId, recordController.editLocation);
 // Edit the comment of a specific red-flag record.
 recordRoute.patch('/redflags/:id/comment', tokenValidator, validation.recordId, recordController.editComment);
-
+// Delete a specific red flag record.
+recordRoute.delete('/redflags/:id', tokenValidator, validation.recordId, recordController.deleteRecord);
 export default recordRoute;

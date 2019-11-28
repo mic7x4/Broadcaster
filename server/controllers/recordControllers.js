@@ -35,7 +35,7 @@ class RecordControllers {
   static getSingleRecord(req, res) {
     const findRecord = Records.find(
       (record) => record.id === parseInt(req.params.id, 10),
-    );
+   );
     if (!findRecord) {
       return res
         .status(404)
@@ -45,12 +45,12 @@ class RecordControllers {
     return res.status(200).json({ status: res.statusCode, findRecord });
   }
 
+
   //   Edit Location
   static editLocation(req, res) {
     const locationIndex = Records.findIndex(
       (location) => location.id === parseInt(req.params.id, 0),
     );
-
     if (Records[locationIndex].status === 'draft') {
       if (locationIndex >= 0) {
         Records[locationIndex].location = req.body.location;
@@ -70,6 +70,7 @@ class RecordControllers {
       message: "You can't edit this property",
     });
   }
+
 }
 
 export default RecordControllers;

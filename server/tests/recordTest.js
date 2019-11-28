@@ -33,7 +33,7 @@ describe('Test all records Endpoints', () => {
         .request(app)
         .get('/api/v1/redflags/1')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.body.should.have.property('message');
           done();
         });
     });

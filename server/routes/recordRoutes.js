@@ -12,5 +12,7 @@ recordRoute.get('/redflags', recordController.getAllRecord);
 recordRoute.get('/redflags/:id', validation.recordId, recordController.getSingleRecord);
 // Edit the location of a specific red-flag record.
 recordRoute.patch('/redflags/:id/location', tokenValidator, validation.recordId, recordController.editLocation);
+// Edit the comment of a specific red-flag record.
+recordRoute.patch('/redflags/:id/comment', tokenValidator, validation.recordId, recordController.editComment);
 
 export default recordRoute;

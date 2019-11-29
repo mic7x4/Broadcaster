@@ -68,17 +68,19 @@ header a:hover {
 /* Landing index page */
 #showcase {
   background-image: linear-gradient(rgba(6, 13, 41, 0.1), #001),
-    url("/images/landingpage1.jpg");
+    url("../images/landingpage1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding: 206.5px 300px;
+  padding: 219px 300px;
+
 }
 #showcase h1 {
   color: #fff;
   font-weight: 900;
   font-size: 50px;
+  font-size: 40px;
   text-align: center;
 }
 #showcase h4 {
@@ -106,6 +108,7 @@ header a:hover {
 #showcase .joinin:hover {
   opacity: 0.8;
 }
+
 /* Showcase Media Querries */
 @media only screen and (max-width: 750px) {
   #showcase {

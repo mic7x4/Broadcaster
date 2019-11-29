@@ -94,6 +94,31 @@ class RecordControllers {
       message: "You can't edit the record it is into investigation",
     });
   }
+
+  // Delete a specific red flag record.
+  static deleteRecord(req, res) {
+    const findRecord = Records.find(
+      (record) => record.id === parseInt(req.params.id, 10),
+    );
+    if (findRecord.status === 'draft') {
+      if (!findRecord) {
+        return res
+          .status(404)
+          .json({ message: 'The record of the given id not found' });
+      }
+      const index = Records.indexOf(findRecord);
+      Records.splice(index, 1);
+      return res.status(200).json({
+        status: res.statusCode,
+        message: 'red-flag record has been deleted',
+        data: findRecord,
+      });
+    }
+    return res.status(400).json({
+      status: res.statusCode,
+      message: "You can't delete this Record",
+    });
+  }
 }
 
 export default RecordControllers;

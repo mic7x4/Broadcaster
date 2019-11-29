@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/mic7x4/Broadcaster/badge.svg?branch=develop)](https://coveralls.io/github/mic7x4/Broadcaster?branch=develop) [![Build Status](https://travis-ci.org/mic7x4/Broadcaster.svg?branch=develop)](https://travis-ci.org/mic7x4/Broadcaster)
 # Broadcaster
 Corruption is a huge bane to Africa’s development. African countries must develop novel and
 localized solutions that will curb this menace, hence the birth of Broadcaster. Broadcaster

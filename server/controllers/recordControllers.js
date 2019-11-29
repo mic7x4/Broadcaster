@@ -16,6 +16,15 @@ class RecordControllers {
       images,
       videos,
     };
+    const titleIndex = Records.findIndex(
+      (recordTitle) => recordTitle.title === title,
+    );
+    const typeIndex = Records.findIndex((typeindex) => typeindex.type === type);
+    const commentIndex = Records.findIndex(
+      (recordComment) => recordComment.comment === comment,
+    );
+    const locationIndex = Records.findIndex((loc) => loc.location === location);
+    if (titleIndex >= 0 && typeIndex >= 0 && commentIndex >= 0 && locationIndex >= 0) { return res.json({ message: 'record exists' }); }
     Records.push(newRecord);
     return res.status(201).json({
       status: res.statusCode,

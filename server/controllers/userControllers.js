@@ -24,7 +24,10 @@ class userControllers {
       username,
       isAdmin: false,
     };
-
+    const emailIndex = Users.findIndex((uemail) => uemail.email === email);
+    const usernameIndex = Users.findIndex((uIndex) => uIndex.username === username);
+    if (emailIndex >= 0) return res.json({ message: 'Email already exists' });
+    if (usernameIndex >= 0) return res.json({ message: 'Username taken' });
     const hashedPassword = hashPassword(password);
     const userToken = signJwt(newUser);
     newUser.password = hashedPassword;

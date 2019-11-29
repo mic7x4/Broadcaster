@@ -35,7 +35,7 @@ class RecordControllers {
   static getSingleRecord(req, res) {
     const findRecord = Records.find(
       (record) => record.id === parseInt(req.params.id, 10),
-   );
+    );
     if (!findRecord) {
       return res
         .status(404)
@@ -44,7 +44,6 @@ class RecordControllers {
 
     return res.status(200).json({ status: res.statusCode, findRecord });
   }
-
 
   //   Edit Location
   static editLocation(req, res) {
@@ -71,6 +70,30 @@ class RecordControllers {
     });
   }
 
+  // Edit the comment of a specific red-flag record.
+  static editComment(req, res) {
+    const commentIndex = Records.findIndex(
+      (comment) => comment.id === parseInt(req.params.id, 10),
+    );
+    if (Records[commentIndex].status === 'draft') {
+      if (commentIndex >= 0) {
+        Records[commentIndex].comment = req.body.comment;
+        return res.status(200).json({
+          status: res.statusCode,
+          message: 'Updated red-flag record’s comment',
+          data: Records[commentIndex],
+        });
+      }
+      return res.status(404).json({
+        status: res.statusCode,
+        error: 'Comment with given ID  not found',
+      });
+    }
+    return res.status(400).json({
+      status: res.statusCode,
+      message: "You can't edit the record it is into investigation",
+    });
+  }
 }
 
 export default RecordControllers;

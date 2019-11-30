@@ -65,7 +65,103 @@ header a {
 header a:hover {
   opacity: 0.9;
 }
+/* Landing index page */
+#column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2%;
+  padding-top: 1%;
+}
+.showcase {
+  background-image: linear-gradient(rgba(6, 13, 41, 0.1), #001),
+    url("../images/four.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  height: 100%;
+}
+.card {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 91.7%;
+  background-color: aliceblue;
+  height: calc(100vh - 10px);
+  border-radius: 2%;
+  opacity: 0.9;
+  padding: 4%;
+  color: #001;
+  font-weight: bold;
+}
+.inside-card {
+  font-weight: 900;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 4%;
+  margin-bottom: 2%;
+}
+.inside-card .profile {
+  margin: 0;
+  padding-top: 0;
+  width: 10%;
+  border-radius: 20px;
+  float: left;
+}
+.corruption {
+  border-radius: 20px;
+  width: 29%;
+}
+.landing-button {
+  font-size: 18px;
+  width: 60%;
+  border: #fff 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  font-weight: bold;
+  background-color: #333;
+  align-content: center;
+  color: #fff;
+}
+.landing-button:hover {
+  opacity: 0.7;
+}
 
+#showcase h1 {
+  color: #fff;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+}
+#showcase h4 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px 0 20px;
+  line-height: 1.8;
+  width: 100%;
+}
+#showcase .joinin {
+  font-size: 18px;
+  border: #fff 1px solid;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: rgb(238, 44, 44);
+  padding: 0 auto;
+  align-content: center;
+  color: #fff;
+}
+#showcase .joinin:hover {
+  opacity: 0.8;
+}
 /* Signup Container */
 .signup-container {
   width: 60%;
@@ -118,7 +214,12 @@ textarea {
   padding-bottom: 50px;
   height: calc(100vh - 250px);
 }
-
+@media only screen and (max-width: 768px) {
+  .login-container {
+    width: 50%;
+    height: 80%;
+  }
+}
 /* New record */
 .recordSelect {
   width: 100%;
@@ -211,6 +312,28 @@ textarea {
 }
 .deleteButton:hover {
   background-color: darkred;
+}
+/* user delete or edit record Media Querries */
+@media only screen and (max-width: 768px) {
+  .recordView {
+    width: 90%;
+  }
+  .recordImage {
+    height: 35rem;
+    width: 90%;
+  }
+  .recordImage img {
+    width: 90%;
+    height: 100%;
+    border-radius: 2%;
+  }
+  .details {
+    border-radius: 2%;
+    border: 0.5px solid #ccc;
+    display: grid;
+    overflow: hidden;
+    width: 90%;
+  }
 }
 /* User View All Records */
 .filter {
@@ -312,4 +435,55 @@ footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .recordDescription,
+  .userActions {
+    width: 80%;
+  }
+  .recordComment {
+    width: 80%;
+  }
+  .recordImage img {
+    width: 90%;
+  }.inside-card {
+    font-size: 12px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .recordDescription,
+  .userActions {
+    width: 80%;
+  }
+  .recordComment {
+    width: 80%;
+  }
+  .recordImage img {
+    width: 90%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .recordDescription,
+  .userActions {
+    width: 80%;
+  }
+  .recordComment {
+    width: 80%;
+  }
+  .recordImage {
+    width: 90%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

@@ -1,7 +1,7 @@
 import Records from '../model/Records';
 
 class RecordControllers {
-  // Create a new RedFlag
+  // Create a new RedFlags
   static createRecord(req, res) {
     const {
       title, type, comment, location, status, images, videos,

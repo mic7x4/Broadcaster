@@ -12,7 +12,6 @@ const tokenValidator = (req, res, next) => {
       message: 'Access denied no token provided',
     });
   }
-
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded;

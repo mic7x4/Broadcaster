@@ -5,7 +5,7 @@ import Users from '../model/Users';
 dotenv.config();
 const { signJwt, hashPassword, compareHash } = helper;
 class userControllers {
-  // User signup Controlller
+  // User signup Controlllers
   static userSignup(req, res) {
     const {
       firstname,

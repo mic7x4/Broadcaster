@@ -66,6 +66,7 @@ header a:hover {
   opacity: 0.9;
 }
 /* Landing index page */
+
 #column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -79,6 +80,7 @@ header a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
@@ -135,7 +137,6 @@ header a:hover {
   color: #fff;
   font-weight: 900;
   font-size: 50px;
-  text-align: center;
 }
 #showcase h4 {
   color: #fff;
@@ -447,8 +448,10 @@ footer {
   }
   .recordImage img {
     width: 90%;
+
   }.inside-card {
     font-size: 12px;
+
   }
 }
 
